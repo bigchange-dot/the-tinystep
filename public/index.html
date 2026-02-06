@@ -10,11 +10,13 @@
             font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, system-ui, sans-serif; 
             background-color: var(--bg); 
             display: flex; 
+            /* [수정됨] 위아래로 배치되도록 변경 */
+            flex-direction: column; 
             justify-content: center; 
-            align-items: center; /* 중앙 정렬 */
+            align-items: center; 
             min-height: 100vh; 
             margin: 0; 
-            padding: 20px; /* 모바일 여백 */
+            padding: 20px; 
             box-sizing: border-box;
         }
         .container { 
@@ -26,6 +28,8 @@
             box-shadow: 0 10px 25px rgba(0,0,0,0.1); 
             display: flex; 
             flex-direction: column; 
+            /* 푸터와 간격을 벌리기 위해 margin-bottom 추가 */
+            margin-bottom: 20px; 
         }
         h1 { font-size: 24px; color: var(--text); margin: 0 0 8px 0; text-align: center; }
         p.subtitle { color: #6B7280; text-align: center; margin-bottom: 25px; font-size: 15px; line-height: 1.4; }
@@ -46,7 +50,6 @@
         }
         textarea:focus { border-color: var(--primary); }
         
-        /* 글자 수 카운터 스타일 */
         #charCount { 
             text-align: right; 
             font-size: 13px; 
@@ -84,6 +87,24 @@
             font-size: 15px;
         }
         .loading { text-align: center; display: none; color: #6B7280; margin-top: 20px; font-size: 14px; }
+
+        /* [수정됨] 푸터 스타일 */
+        .site-footer {
+            width: 100%;
+            text-align: center;
+            color: #6B7280;
+            font-size: 13px;
+            padding: 20px 0;
+        }
+        .site-footer a {
+            color: #6B7280;
+            text-decoration: none;
+            margin: 0 8px;
+        }
+        .site-footer a:hover {
+            text-decoration: underline;
+            color: #374151;
+        }
     </style>
 </head>
 
@@ -111,8 +132,16 @@
         </div>
     </div>
 
+    <footer class="site-footer">
+        <p>&copy; 2026 The Tiny Step. All rights reserved.</p>
+        <div>
+            <a href="/privacy.html">Privacy Policy</a>
+            <span style="color: #D1D5DB;">|</span>
+            <a href="mailto:chaee1008@gmail.com">Contact</a>
+        </div>
+    </footer>
+
     <script>
-        // 1. 요소 선택
         const textarea = document.getElementById('userInput');
         const sendButton = document.getElementById('sendButton');
         const charCounter = document.getElementById('charCount');
@@ -120,25 +149,17 @@
         const resultArea = document.getElementById("resultArea");
         const resultText = document.getElementById("resultText");
 
-        // [중요] 배포 후 생성된 Functions URL을 여기에 정확히 넣어주세요!
-        // 예: https://asia-northeast3-project-id.cloudfunctions.net/askGemini
+        // Functions URL (본인 URL로 확인 필요)
         const FUNCTION_URL = "https://us-central1-my-blog-ok-260204.cloudfunctions.net/askGemini"; 
 
         const MAX_CHARS = 500;
 
-        // 2. 글자 수 제한 및 카운팅 로직
         textarea.addEventListener('input', () => {
             const currentLength = textarea.value.length;
             charCounter.textContent = `${currentLength} / ${MAX_CHARS}`;
-
-            if (currentLength >= MAX_CHARS) {
-                charCounter.style.color = '#EF4444'; // 빨간색 경고
-            } else {
-                charCounter.style.color = '#9CA3AF'; // 기본 회색
-            }
+            charCounter.style.color = currentLength >= MAX_CHARS ? '#EF4444' : '#9CA3AF';
         });
 
-        // 3. API 호출 함수
         async function askAI() {
             const input = textarea.value.trim();
 
@@ -148,14 +169,13 @@
                 return; 
             }
 
-            // UI 상태 변경 (로딩 중)
             sendButton.disabled = true;
             sendButton.innerText = "교정 중...";
             loading.style.display = "block";
             resultArea.style.display = "none";
 
             try {
-                // GET 방식 호출 (Query String)
+                // 기존 GET 방식 유지
                 const response = await fetch(`${FUNCTION_URL}?text=${encodeURIComponent(input)}`);
                 
                 if (!response.ok) {
@@ -164,29 +184,19 @@
 
                 const data = await response.json();
                 
-                // 결과 표시
                 resultText.innerText = data.reply;
                 resultArea.style.display = "block";
             } catch (error) {
                 console.error(error);
-                alert("오류가 발생했습니다. 잠시 후 다시 시도해주세요.\n" + error.message);
+                alert("오류가 발생했습니다: " + error.message);
             } finally {
-                // UI 상태 복구
                 sendButton.disabled = false;
                 sendButton.innerText = "교정하기";
                 loading.style.display = "none";
             }
         }
 
-        // 4. 버튼 클릭 이벤트 연결
         sendButton.addEventListener('click', askAI);
     </script>
-    <footer style="text-align: center; margin-top: 60px; padding-bottom: 40px; font-size: 13px; color: #888;">
-        <p>© 2026 The Tiny Step. All rights reserved.</p>
-        <p>
-          <a href="/privacy.html" style="color: #888; text-decoration: none; margin-right: 10px;">Privacy Policy</a> | 
-          <a href="mailto:[본인 이메일]" style="color: #888; text-decoration: none; margin-left: 10px;">Contact</a>
-        </p>
-      </footer>
 </body>
 </html>
