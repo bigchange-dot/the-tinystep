@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5634467403173492"
+     crossorigin="anonymous"></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The Tiny Step - 비즈니스 영어 교정기</title>
@@ -207,7 +209,7 @@
             charCounter.style.color = currentLength >= MAX_CHARS ? '#EF4444' : '#9CA3AF';
         });
 
-        // AI 요청 함수
+        // AI 요청 함수 (수정됨)
         async function askAI() {
             const input = textarea.value.trim();
 
@@ -217,36 +219,38 @@
                 return; 
             }
 
-            // 로딩 상태 표시
             sendButton.disabled = true;
-            sendButton.innerText = "교정 중...";
+            sendButton.innerText = "답변 생성 중...";
             loading.style.display = "block";
             resultArea.style.display = "none";
 
             try {
-                // GET 요청으로 데이터 전송
                 const response = await fetch(`${FUNCTION_URL}?text=${encodeURIComponent(input)}`);
-                
+                const data = await response.json(); // [중요] 상태 코드 상관없이 일단 내용을 읽음
+
                 if (!response.ok) {
+                    // 에러가 났지만 서버가 보낸 메시지(예: 🚫 사용량이 너무 많습니다)가 있다면 그걸 보여줌
+                    if (data.reply) {
+                        resultText.innerText = data.reply;
+                        resultArea.style.display = "block";
+                        return; // 여기서 함수 종료
+                    }
+                    // 메시지도 없으면 진짜 에러 던짐
                     throw new Error("서버 응답 오류");
                 }
-
-                const data = await response.json();
                 
-                // 결과 표시
+                // 성공 시 결과 표시
                 resultText.innerText = data.reply;
                 resultArea.style.display = "block";
                 
-                // 모바일에서 결과 잘 보이게 스크롤 이동
                 resultArea.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
 
             } catch (error) {
                 console.error(error);
                 alert("오류가 발생했습니다: " + error.message);
             } finally {
-                // 상태 복구
                 sendButton.disabled = false;
-                sendButton.innerText = "교정하기";
+                sendButton.innerText = "질문하기"; // 버튼 이름도 상황에 맞게 변경
                 loading.style.display = "none";
             }
         }
