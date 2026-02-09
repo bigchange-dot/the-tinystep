@@ -2,22 +2,21 @@
 <html lang="ko">
 <head>
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5634467403173492"
-     crossorigin="anonymous"></script>
+    crossorigin="anonymous"></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Tiny Step - 비즈니스 영어 교정기</title>
-    <meta name="description" content="AI 기반 무료 비즈니스 영어 이메일 교정기. 어색한 콩글리시를 원어민처럼 세련된 비즈니스 영어로 3초 만에 바꿔드립니다.">
-    <meta name="keywords" content="영어 이메일 교정, 비즈니스 영어, AI 영어 첨삭, 무료 영작 수정, The Tiny Step">
+    <title>The Tiny Step - 영어 표현 도우미</title>
+    <meta name="description" content="비즈니스 영어 교정, 여행 영어, 상황별 한줄 영어 표현까지 AI가 도와드립니다.">
     
     <style>
+        /* 스타일은 그대로 유지 */
         :root { --primary: #4F46E5; --bg: #F3F4F6; --text: #1F2937; }
         
         body { 
             font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, system-ui, sans-serif; 
             background-color: var(--bg); 
             display: flex; 
-            flex-direction: column; /* 위에서 아래로 배치 */
-            justify-content: center; 
+            flex-direction: column; 
             align-items: center; 
             min-height: 100vh; 
             margin: 0; 
@@ -28,31 +27,50 @@
         .container { 
             background: white; 
             width: 100%; 
-            max-width: 500px; 
-            padding: 40px 30px; 
-            border-radius: 16px; 
-            box-shadow: 0 10px 25px rgba(0,0,0,0.08); 
+            max-width: 600px; 
+            padding: 30px; 
+            border-radius: 20px; 
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08); 
             display: flex; 
             flex-direction: column; 
-            margin-bottom: 30px; /* 푸터와 간격 */
+            margin-bottom: 30px; 
         }
 
         h1 { 
-            font-size: 26px; 
+            font-size: 24px; 
             color: var(--text); 
-            margin: 0 0 10px 0; 
+            margin: 0 0 5px 0; 
             text-align: center; 
             font-weight: 800;
         }
-
-        p.subtitle { 
-            color: #6B7280; 
-            text-align: center; 
-            margin-bottom: 30px; 
-            font-size: 15px; 
-            line-height: 1.5; 
-        }
         
+        .tabs {
+            display: flex;
+            background-color: #F3F4F6;
+            border-radius: 12px;
+            padding: 5px;
+            margin: 25px 0;
+        }
+
+        .tab-btn {
+            flex: 1;
+            padding: 12px;
+            border: none;
+            background: transparent;
+            border-radius: 8px;
+            font-size: 14px; /* 글자 크기 살짝 조정 */
+            font-weight: 600;
+            color: #6B7280;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+
+        .tab-btn.active {
+            background-color: white;
+            color: var(--primary);
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
+
         .input-wrapper { position: relative; margin-bottom: 10px; }
         
         textarea { 
@@ -74,16 +92,8 @@
             border-color: var(--primary); 
             box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.1);
         }
-        
-        #charCount { 
-            text-align: right; 
-            font-size: 13px; 
-            color: #9CA3AF; 
-            margin-top: 5px; 
-            font-weight: 500;
-        }
 
-        button { 
+        button.submit-btn { 
             margin-top: 15px; 
             width: 100%; 
             background-color: var(--primary); 
@@ -95,11 +105,10 @@
             border-radius: 12px; 
             cursor: pointer; 
             transition: background-color 0.2s; 
-            box-shadow: 0 4px 6px -1px rgba(79, 70, 229, 0.2);
         }
         
-        button:hover { background-color: #4338CA; }
-        button:disabled { background-color: #D1D5DB; cursor: not-allowed; box-shadow: none; }
+        button.submit-btn:hover { background-color: #4338CA; }
+        button.submit-btn:disabled { background-color: #D1D5DB; cursor: not-allowed; }
         
         #resultArea { 
             margin-top: 30px; 
@@ -107,8 +116,6 @@
             border-top: 1px dashed #E5E7EB; 
             padding-top: 25px; 
         }
-        
-        .result-label { font-size: 14px; color: #6B7280; margin-bottom: 10px; font-weight: 600; }
         
         .result-box { 
             background-color: #F8FAFC; 
@@ -129,28 +136,14 @@
             font-size: 14px; 
         }
 
-        /* 깔끔한 푸터 스타일 */
         .site-footer {
             width: 100%;
             text-align: center;
             color: #9CA3AF;
             font-size: 13px;
-            margin-top: auto; /* 화면 하단 고정 */
+            margin-top: auto; 
         }
-        
-        .site-footer a {
-            color: #6B7280;
-            text-decoration: none;
-            margin: 0 10px;
-            transition: color 0.2s;
-        }
-        
-        .site-footer a:hover {
-            text-decoration: underline;
-            color: #374151;
-        }
-        
-        .divider { color: #E5E7EB; }
+        .site-footer a { color: #6B7280; text-decoration: none; margin: 0 10px; }
     </style>
 </head>
 
@@ -158,22 +151,25 @@
 
     <div class="container">
         <h1>✨ The Tiny Step</h1>
-        <p class="subtitle">어색한 콩글리시, 이제 안녕!<br>AI가 프로페셔널한 비즈니스 영어로 바꿔드려요.</p>
+        
+        <div class="tabs">
+            <button class="tab-btn active" onclick="setMode('business')">💼 비즈니스 교정</button>
+            <button class="tab-btn" onclick="setMode('travel')">✈️ 여행 영어</button>
+            <button class="tab-btn" onclick="setMode('oneliner')">💡 한줄 표현</button>
+        </div>
         
         <div class="input-wrapper">
-            <textarea id="userInput" maxlength="500" placeholder="교정하고 싶은 영어 문장이나 한글 내용을 여기에 입력하세요..."></textarea>
-            <div id="charCount">0 / 500</div>
+            <textarea id="userInput" maxlength="500" placeholder="교정하고 싶은 영어 이메일이나 문장을 입력하세요..."></textarea>
         </div>
 
-        <button id="sendButton">교정하기</button>
+        <button id="sendButton" class="submit-btn">교정하기</button>
 
         <div class="loading" id="loading">
-            AI가 문장을 다듬고 있습니다... ✍️<br>
+            AI가 답변을 생각하고 있습니다... 🧠<br>
             <span style="font-size:12px; color:#9ca3af;">(약 3~5초 소요됩니다)</span>
         </div>
 
         <div id="resultArea">
-            <div class="result-label">교정 결과</div>
             <div class="result-box" id="resultText"></div>
         </div>
     </div>
@@ -181,10 +177,8 @@
     <footer class="site-footer">
         <p>&copy; 2026 The Tiny Step. All rights reserved.</p>
         <div style="margin-top: 10px;">
-            <a href="/guide.html">User Guide</a>
-            <span class="divider">|</span>
-            <a href="/privacy.html">Privacy Policy</a>
-            <span class="divider">|</span>
+            <a href="/guide.html">User Guide</a> | 
+            <a href="/privacy.html">Privacy Policy</a> | 
             <a href="mailto:chaee1008@gmail.com">Contact</a>
         </div>
     </footer>
@@ -192,24 +186,40 @@
     <script>
         const textarea = document.getElementById('userInput');
         const sendButton = document.getElementById('sendButton');
-        const charCounter = document.getElementById('charCount');
         const loading = document.getElementById("loading");
         const resultArea = document.getElementById("resultArea");
         const resultText = document.getElementById("resultText");
+        const tabBtns = document.querySelectorAll('.tab-btn');
 
-        // [중요] 배포된 Functions URL
-        const FUNCTION_URL = "https://askgemini-266356508183.us-central1.run.app"; 
+        // [중요] 아까 찾아두신 진짜 AI 주소로 꼭 바꿔주세요! (run.app 으로 끝나는 주소)
+        const FUNCTION_URL = "https://askgemini-mdfanbh2ya-uc.a.run.app"; 
 
-        const MAX_CHARS = 500;
+        let currentMode = 'business';
 
-        // 글자 수 카운팅
-        textarea.addEventListener('input', () => {
-            const currentLength = textarea.value.length;
-            charCounter.textContent = `${currentLength} / ${MAX_CHARS}`;
-            charCounter.style.color = currentLength >= MAX_CHARS ? '#EF4444' : '#9CA3AF';
-        });
+        function setMode(mode) {
+            currentMode = mode;
+            
+            tabBtns.forEach(btn => btn.classList.remove('active'));
+            // 클릭된 버튼 찾기 (event.target이 span일 수도 있으므로 closest 사용)
+            const targetBtn = event.target.closest('.tab-btn');
+            if (targetBtn) targetBtn.classList.add('active');
 
-        // AI 요청 함수 (수정됨)
+            if (mode === 'business') {
+                textarea.placeholder = "교정하고 싶은 영어 이메일이나 문장을 입력하세요...";
+                sendButton.innerText = "교정하기";
+            } else if (mode === 'travel') {
+                textarea.placeholder = "어떤 상황인가요? (예: 식당에서 물 더 달라고 할 때 / 공항에서 짐 찾을 때)";
+                sendButton.innerText = "표현 추천받기";
+            } else if (mode === 'oneliner') {
+                textarea.placeholder = "느낌이나 키워드를 입력하세요 (예: 힘내, 고마워, 칭찬, 사과)";
+                sendButton.innerText = "한줄 표현 찾기";
+            }
+            
+            resultArea.style.display = 'none';
+            textarea.value = '';
+            textarea.focus();
+        }
+
         async function askAI() {
             const input = textarea.value.trim();
 
@@ -220,29 +230,25 @@
             }
 
             sendButton.disabled = true;
-            sendButton.innerText = "답변 생성 중...";
             loading.style.display = "block";
             resultArea.style.display = "none";
 
             try {
-                const response = await fetch(`${FUNCTION_URL}?text=${encodeURIComponent(input)}`);
-                const data = await response.json(); // [중요] 상태 코드 상관없이 일단 내용을 읽음
+                // 옵션(mode) 전송
+                const response = await fetch(`${FUNCTION_URL}?text=${encodeURIComponent(input)}&option=${currentMode}`);
+                const data = await response.json(); 
 
                 if (!response.ok) {
-                    // 에러가 났지만 서버가 보낸 메시지(예: 🚫 사용량이 너무 많습니다)가 있다면 그걸 보여줌
                     if (data.reply) {
                         resultText.innerText = data.reply;
                         resultArea.style.display = "block";
-                        return; // 여기서 함수 종료
+                        return;
                     }
-                    // 메시지도 없으면 진짜 에러 던짐
                     throw new Error("서버 응답 오류");
                 }
                 
-                // 성공 시 결과 표시
                 resultText.innerText = data.reply;
                 resultArea.style.display = "block";
-                
                 resultArea.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
 
             } catch (error) {
@@ -250,12 +256,10 @@
                 alert("오류가 발생했습니다: " + error.message);
             } finally {
                 sendButton.disabled = false;
-                sendButton.innerText = "질문하기"; // 버튼 이름도 상황에 맞게 변경
                 loading.style.display = "none";
             }
         }
 
-        // 버튼 클릭 및 엔터키(Ctrl+Enter) 이벤트
         sendButton.addEventListener('click', askAI);
         
         textarea.addEventListener('keydown', (e) => {
