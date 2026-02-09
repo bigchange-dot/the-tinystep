@@ -1,42 +1,174 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Privacy Policy - The Tiny Step</title>
     <style>
-        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; line-height: 1.6; color: #333; max-width: 800px; margin: 0 auto; padding: 20px; }
-        h1 { font-size: 24px; border-bottom: 1px solid #eee; padding-bottom: 10px; margin-bottom: 20px; }
-        h2 { font-size: 18px; margin-top: 30px; color: #555; }
-        p { margin-bottom: 15px; }
-        .footer { margin-top: 50px; font-size: 12px; color: #999; border-top: 1px solid #eee; padding-top: 20px; }
+        :root { --primary: #4F46E5; --bg: #F3F4F6; --text: #1F2937; }
+        
+        body { 
+            font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, system-ui, sans-serif; 
+            background-color: var(--bg); 
+            line-height: 1.6;
+            color: #374151;
+            margin: 0;
+            padding: 40px 20px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .container { 
+            background: white; 
+            width: 100%; 
+            max-width: 800px; 
+            padding: 50px; 
+            border-radius: 16px; 
+            box-shadow: 0 4px 20px rgba(0,0,0,0.05); 
+            box-sizing: border-box;
+        }
+
+        h1 { 
+            font-size: 28px; 
+            color: #111827; 
+            margin-bottom: 10px; 
+            border-bottom: 2px solid #eee; 
+            padding-bottom: 20px; 
+        }
+
+        .meta-info {
+            font-size: 14px;
+            color: #6B7280;
+            margin-bottom: 40px;
+            background-color: #F9FAFB;
+            padding: 15px;
+            border-radius: 8px;
+        }
+
+        h2 { 
+            font-size: 20px; 
+            color: var(--primary); 
+            margin-top: 40px; 
+            margin-bottom: 15px; 
+            font-weight: 700;
+        }
+
+        p { margin-bottom: 15px; word-break: keep-all; }
+        
+        ul { margin-bottom: 15px; padding-left: 20px; }
+        li { margin-bottom: 8px; }
+
+        strong { color: #111827; font-weight: 600; }
+
+        a { color: var(--primary); text-decoration: none; }
+        a:hover { text-decoration: underline; }
+
+        .back-btn {
+            display: inline-block;
+            margin-top: 50px;
+            padding: 12px 25px;
+            background-color: #E5E7EB;
+            color: #374151;
+            border-radius: 8px;
+            font-weight: bold;
+            text-decoration: none;
+            transition: 0.2s;
+        }
+        .back-btn:hover { background-color: #D1D5DB; text-decoration: none; }
+
+        /* 모바일 최적화 */
+        @media (max-width: 600px) {
+            .container { padding: 30px 20px; }
+            h1 { font-size: 24px; }
+        }
     </style>
 </head>
 <body>
 
-    <h1>Privacy Policy for The Tiny Step</h1>
-    <p>Last updated: February 06, 2026</p>
+    <div class="container">
+        <h1>개인정보처리방침 (Privacy Policy)</h1>
+        
+        <div class="meta-info">
+            <strong>시행일:</strong> 2026-02-07<br>
+            <strong>운영자:</strong> The Tiny Step Team<br>
+            <strong>문의:</strong> <a href="mailto:support@the-tinystep.com">support@the-tinystep.com</a>
+        </div>
 
-    <p>At The Tiny Step, accessible from https://the-tinystep.com, one of our main priorities is the privacy of our visitors. This Privacy Policy document contains types of information that is collected and recorded by The Tiny Step and how we use it.</p>
+        <p>The Tiny Step(이하 “서비스”)는 이용자의 개인정보를 중요하게 생각하며 관련 법령을 준수합니다. 본 방침은 서비스 이용 과정에서 어떤 정보가 수집/이용될 수 있는지, 쿠키 및 광고 기술이 어떻게 사용되는지 안내합니다.</p>
 
-    <h2>1. Information We Collect</h2>
-    <p>We do not collect any personal identification information (such as names, phone numbers, or physical addresses) directly from our users. You can use our correction service without signing up.</p>
+        <h2>1. 수집하는 정보</h2>
+        <p>서비스는 원칙적으로 이용자를 직접 식별할 수 있는 개인정보(이름/전화번호/주소/주민번호 등)의 입력을 요구하지 않습니다.<br>
+        다만 이용 과정에서 아래 정보가 자동으로 생성·수집될 수 있습니다.</p>
+        <ul>
+            <li><strong>(1) 자동 수집 정보:</strong> IP 주소(일부 환경에서), 브라우저 종류/버전, OS, 접속 시간, 방문 페이지, 기기 식별 정보(쿠키/로컬스토리지 등)</li>
+            <li><strong>(2) 이용자가 입력하는 텍스트:</strong> 이용자가 교정 기능에 입력한 문장(텍스트)은 서비스 제공을 위해 처리될 수 있습니다.</li>
+        </ul>
+        <p>※ 개인정보/기밀정보(고객정보, 내부자료, 계좌, 주민번호 등)는 입력하지 마세요. 이용자의 입력 책임이 있으며, 민감정보 입력을 권장하지 않습니다.</p>
 
-    <h2>2. Data Processing (AI)</h2>
-    <p>When you input text for correction, the data is processed by the <strong>Google Gemini API</strong> solely for the purpose of providing the service. We <strong>do not store, save, or share</strong> your input text on our servers. Once the result is returned to you, the data is discarded from our processing memory.</p>
+        <h2>2. 정보 이용 목적</h2>
+        <p>수집/처리되는 정보는 아래 목적을 위해 사용될 수 있습니다.</p>
+        <ul>
+            <li>서비스 기능 제공 및 품질 개선(오류 분석, 성능 개선)</li>
+            <li>악용/부정 이용 방지(과도한 트래픽, 공격 탐지 등)</li>
+            <li>통계 및 서비스 운영 분석(방문/이용 흐름 파악)</li>
+            <li>광고 제공 및 광고 성과 측정(Google AdSense 등)</li>
+        </ul>
 
-    <h2>3. Cookies and Google AdSense</h2>
-    <p>We use Google AdSense to display ads. Google, as a third-party vendor, uses cookies to serve ads on our site. Google's use of the DART cookie enables it to serve ads to our users based on their visit to our site and other sites on the Internet.</p>
-    <p>You may opt-out of the use of the DART cookie by visiting the Google ad and content network Privacy Policy.</p>
+        <h2>3. 쿠키(Cookies) 및 유사 기술의 사용</h2>
+        <p>서비스는 원활한 제공과 광고/통계 목적을 위해 <strong>쿠키 및 유사 기술(예: 로컬 스토리지, 태그, 픽셀)</strong>을 사용할 수 있습니다.<br>
+        쿠키는 브라우저에 저장되는 작은 텍스트 파일로, 이용자의 기기 설정에 따라 거부하거나 삭제할 수 있습니다.</p>
+        <ul>
+            <li><strong>쿠키 설정 변경:</strong> 브라우저 설정에서 쿠키 저장을 거부/삭제할 수 있습니다.</li>
+            <li>다만 쿠키를 차단할 경우 일부 기능이 정상 동작하지 않을 수 있습니다.</li>
+        </ul>
 
-    <h2>4. Log Files</h2>
-    <p>The Tiny Step follows a standard procedure of using log files. These files log visitors when they visit websites. The information collected includes internet protocol (IP) addresses, browser type, Internet Service Provider (ISP), date and time stamp, and referring/exit pages.</p>
+        <h2>4. Google AdSense 및 제3자 광고 (중요)</h2>
+        <p>서비스는 Google AdSense 등 제3자 광고 서비스를 사용할 수 있습니다. 이 경우 아래 사항이 적용될 수 있습니다.</p>
+        <ul>
+            <li>Google 및 제3자 벤더는 쿠키를 사용하여 이용자의 이전 방문 기록 등을 바탕으로 광고를 제공할 수 있습니다.</li>
+            <li>이용자는 다음 경로에서 <strong>맞춤 광고(관심 기반 광고)</strong>를 관리/해제할 수 있습니다.
+                <ul>
+                    <li><a href="https://adssettings.google.com" target="_blank">Google 광고 설정(Ads Settings)</a>에서 맞춤 광고 관리/해제</li>
+                    <li>일부 제3자 벤더의 맞춤 광고 쿠키 사용은 <a href="https://www.aboutads.info" target="_blank">aboutads.info</a>에서 선택 해제 가능</li>
+                </ul>
+            </li>
+        </ul>
+        <p>※ 위 “옵트아웃(선택 해제)” 안내는 구글이 퍼블리셔에게 고지하도록 안내하는 내용입니다.</p>
 
-    <h2>5. Contact Us</h2>
-    <p>If you have additional questions or require more information about our Privacy Policy, do not hesitate to contact us at: <strong>[chaee1008@gmail.com]</strong></p>
+        <h2>5. 유럽(EEA/영국/스위스) 이용자에 대한 동의(Consent) 안내</h2>
+        <p>유럽경제지역(EEA), 영국, 스위스 이용자에게 광고(특히 맞춤 광고)를 제공하는 경우, 관련 법령(GDPR/ePrivacy 등)에 따라 쿠키 저장 및 개인 데이터 활용에 대한 고지/동의가 필요할 수 있습니다.<br>
+        또한 구글 정책상 특정 지역에서는 IAB TCF와 통합된 “구글 인증 CMP(Consent Management Platform)” 사용이 요구될 수 있습니다.</p>
+        <p>서비스는 적용 대상 지역에서 필요한 경우 동의 팝업(CMP)을 통해 동의를 수집하거나, 맞춤 광고 대신 비개인화 광고를 제공할 수 있습니다.</p>
 
-    <div class="footer">
-        &copy; 2026 The Tiny Step. All rights reserved.
+        <h2>6. 제3자 제공 및 처리위탁</h2>
+        <p>서비스는 아래 목적 범위 내에서 제3자 서비스(예: Google AdSense 등)를 사용할 수 있으며, 이 과정에서 쿠키/광고 식별자 등 정보가 처리될 수 있습니다.</p>
+        <ul>
+            <li>광고 제공 및 성과 측정: Google AdSense(및 관련 벤더)</li>
+            <li>(선택) 이용 통계/성능 분석: Google Analytics 등</li>
+        </ul>
+        <p>※ 서비스는 이용자를 직접 식별하기 위한 개인정보를 제3자에게 판매하지 않습니다.</p>
+
+        <h2>7. 보유 및 이용 기간</h2>
+        <p>원칙적으로 목적 달성 시 지체 없이 파기합니다. 다만 법령에 따라 보관이 필요한 경우 해당 기간 동안 보관할 수 있습니다.<br>
+        기술 로그/보안 기록은 서비스 안정성 및 부정 이용 방지를 위해 일정 기간 보관될 수 있습니다(최소 보관 범위로 운영).</p>
+
+        <h2>8. 이용자의 권리 및 행사 방법</h2>
+        <p>이용자는 쿠키 차단/삭제 등 브라우저 설정을 통해 정보 수집을 제한할 수 있습니다. 또한 맞춤 광고에 대한 선택 해제는 아래 경로에서 가능합니다.</p>
+        <ul>
+            <li><a href="https://adssettings.google.com" target="_blank">Google Ads Settings</a>에서 맞춤 광고 관리</li>
+            <li><a href="https://www.aboutads.info" target="_blank">aboutads.info</a>에서 일부 제3자 벤더 맞춤 광고 쿠키 선택 해제</li>
+        </ul>
+        <p>문의가 필요하면 아래로 연락해 주세요.<br>
+        이메일: <a href="mailto:support@the-tinystep.com">support@the-tinystep.com</a></p>
+
+        <h2>9. 아동의 개인정보</h2>
+        <p>서비스는 일반 이용자를 대상으로 하며, 법령상 보호가 필요한 아동의 개인정보를 의도적으로 수집하지 않습니다.<br>
+        (아동이 사용하는 경우라도 개인정보/연락처/학교 등 식별 정보 입력을 권장하지 않습니다.)</p>
+
+        <h2>10. 개인정보처리방침 변경</h2>
+        <p>본 방침은 관련 법령/정책/서비스 변경에 따라 개정될 수 있으며, 변경 시 본 페이지를 통해 공지합니다.</p>
+
+        <a href="/" class="back-btn">← 메인으로 돌아가기</a>
     </div>
 
 </body>
