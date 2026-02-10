@@ -15,11 +15,11 @@ const model = genAI.getGenerativeModel({ model: "gemini-2.5-flash" });
 
 exports.askGemini = onRequest({ cors: true }, async (req, res) => {
   try {
-    // --- [방어 시스템: 10분에 5회 제한] ---
+    // --- [방어 시스템: 10분에 10회 제한] ---
     const clientIp = req.headers['x-forwarded-for']?.split(',')[0] || req.socket.remoteAddress;
     const ipKey = clientIp ? clientIp.replace(/[:.]/g, '_') : 'unknown';
 
-    const LIMIT_COUNT = 5; 
+    const LIMIT_COUNT = 10; 
     const LIMIT_TIME = 10 * 60 * 1000; 
 
     const docRef = db.collection('usage_logs').doc(ipKey);
