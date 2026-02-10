@@ -1,0 +1,3 @@
+I have successfully pushed your `public` folder to `https://github.com/bigchange-dot/the-tinystep`.
+
+You can find the detailed instructions for connecting your GitHub repository to Cloudflare Pages for deployment in the file named `cloudflare_pages_instructions.md`. Please open and read this file to complete the deployment process.
