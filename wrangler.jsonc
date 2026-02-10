@@ -1,0 +1,6 @@
+{
+    "name": "my-firebase-worker",
+    "main": "functions/index.js", // 또는 "functions/src/index.ts" (실제 파일 위치)
+    "compatibility_date": "2026-02-10",
+    "compatibility_flags": [ "nodejs_compat" ] // Firebase 라이브러리 사용 시 필요할 수 있음
+  }
