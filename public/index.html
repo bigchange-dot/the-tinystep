@@ -203,6 +203,23 @@
     .site-footer a { color: #6B7280; text-decoration: none; margin: 0 10px; }
     .site-footer a:hover { text-decoration: underline; color: #374151; }
 
+    /* Footer Navigation Fixed at Top */
+    .footer-nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: white; /* Ensures content below is not visible */
+      z-index: 1000; /* Ensures it stays on top of other content */
+      padding: 10px 0; /* Adds some padding */
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Adds a subtle shadow */
+      text-align: center; /* Center the links */
+    }
+
+    /* Adjust body padding to prevent content from being hidden behind the fixed footer-nav */
+    body {
+      padding-top: 50px; /* Adjust this value based on the height of your fixed footer-nav */
+    }
+
     @media (max-width: 480px) {
       .tab-btn {
         padding: 10px 4px;
@@ -286,7 +303,7 @@
 
   <footer class="site-footer">
     <p>&copy; 2026 The Tiny Step. All rights reserved.</p>
-    <div style="margin-top: 10px;">
+    <div class="footer-nav" style="margin-top: 10px;">
       <a href="/about.html">About</a> |
       <a href="/guide.html">User Guide</a> |
       <a href="/examples.html">Examples</a> |
