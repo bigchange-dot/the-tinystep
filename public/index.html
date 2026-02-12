@@ -1,19 +1,19 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-  <meta name="google-adsense-account" content="ca-pub-5634467403173492">
-  <!-- AdSense (승인 후 실제 광고 노출 시 사용) -->
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5634467403173492"
-    crossorigin="anonymous"></script>
-
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
   <title>The Tiny Step - 영어 표현 도우미</title>
-  <meta name="description" content="비즈니스 영어 표현, 여행 영어, 상황별 한줄 영어 표현까지 AI가 도와드립니다." />
+  <meta name="description" content="비즈니스 영어 표현, 여행 영어, 상황별 한줄 영어 표현까지 AI가 도와드립니다. 템플릿/표현 라이브러리도 함께 제공합니다." />
+  <meta name="robots" content="index,follow" />
+
+  <!-- ✅ AdSense 승인 전까지는 스크립트/광고 코드 넣지 마세요 -->
 
   <style>
-    :root { --primary: #4F46E5; --bg: #F3F4F6; --text: #1F2937; }
+    :root { --primary:#4F46E5; --bg:#F3F4F6; --text:#1F2937; }
 
+    * { box-sizing: border-box; }
     body {
       font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
       background-color: var(--bg);
@@ -23,27 +23,122 @@
       min-height: 100vh;
       margin: 0;
       padding: 20px;
-      box-sizing: border-box;
+      color: var(--text);
     }
 
     .container {
       background: white;
       width: 100%;
-      max-width: 600px;
-      padding: 30px;
+      max-width: 900px;
+      padding: 28px;
       border-radius: 20px;
       box-shadow: 0 10px 30px rgba(0,0,0,0.08);
       display: flex;
       flex-direction: column;
+      gap: 18px;
       margin-bottom: 18px;
     }
 
-    h1 {
-      font-size: 24px;
+    .topbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
       color: var(--text);
-      margin: 0 0 5px 0;
+      font-weight: 900;
+      letter-spacing: -0.2px;
+    }
+
+    .brand .logo {
+      width: 34px;
+      height: 34px;
+      border-radius: 12px;
+      background: rgba(79,70,229,.12);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+    }
+
+    .nav {
+      display: flex;
+      gap: 8px; /* Added gap for spacing between tags */
+      flex-wrap: wrap; /* Allow tags to wrap on smaller screens */
+      justify-content: flex-end; /* Align tags to the right */
+    }
+
+    .nav-tag {
+      background-color: var(--primary); /* Blue background */
+      color: white; /* White text */
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 700;
+      padding: 6px 12px;
+      border-radius: 999px; /* Pill shape */
+      white-space: nowrap;
+      transition: background-color 0.2s;
+    }
+    .nav-tag:hover {
+      background-color: #4338CA; /* Darker blue on hover */
+      text-decoration: none;
+    }
+
+    h1 {
+      font-size: 26px;
+      margin: 0;
       text-align: center;
+      font-weight: 900;
+    }
+
+    .subtitle {
+      text-align: center;
+      color: #6B7280;
+      font-size: 15px;
+      line-height: 1.6;
+      margin: 0;
+    }
+
+    .split {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 16px;
+      align-items: start;
+    }
+
+    .panel {
+      border: 1px solid #E5E7EB;
+      border-radius: 18px;
+      padding: 18px;
+      background: #FFFFFF;
+    }
+
+    .panel-title {
+      font-size: 14px;
       font-weight: 800;
+      margin: 0 0 10px 0;
+      color: #374151;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+    }
+
+    .panel-title .pill {
+      font-size: 12px;
+      font-weight: 800;
+      color: #4338CA;
+      background: rgba(79,70,229,.10);
+      padding: 6px 10px;
+      border-radius: 999px;
+      white-space: nowrap;
     }
 
     .tabs {
@@ -51,7 +146,7 @@
       background-color: #F3F4F6;
       border-radius: 12px;
       padding: 5px;
-      margin: 25px 0;
+      margin: 0 0 12px 0;
       gap: 6px;
     }
 
@@ -60,280 +155,389 @@
       padding: 12px;
       border: none;
       background: transparent;
-      border-radius: 8px;
+      border-radius: 10px;
       font-size: 14px;
-      font-weight: 600;
+      font-weight: 700;
       color: #6B7280;
       cursor: pointer;
       transition: 0.2s;
-      white-space: nowrap;
+      line-height: 1.25;
     }
 
     .tab-btn.active {
       background-color: white;
       color: var(--primary);
-      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+      box-shadow: 0 2px 6px rgba(0,0,0,0.06);
     }
-
-    .input-wrapper { position: relative; margin-bottom: 10px; }
-
-    textarea {
-      width: 100%;
-      height: 150px;
-      padding: 15px;
-      border: 2px solid #E5E7EB;
-      border-radius: 12px;
-      font-size: 16px;
-      resize: none;
-      box-sizing: border-box;
-      transition: 0.2s;
-      outline: none;
-      font-family: inherit;
-      line-height: 1.5;
-    }
-
-    textarea:focus {
-      border-color: var(--primary);
-      box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.1);
-    }
-
-    button.submit-btn {
-      margin-top: 15px;
-      width: 100%;
-      background-color: var(--primary);
-      color: white;
-      border: none;
-      padding: 16px;
-      font-size: 16px;
-      font-weight: bold;
-      border-radius: 12px;
-      cursor: pointer;
-      transition: background-color 0.2s;
-    }
-
-    button.submit-btn:hover { background-color: #4338CA; }
-    button.submit-btn:disabled { background-color: #D1D5DB; cursor: not-allowed; }
-
-    #resultArea {
-      margin-top: 30px;
-      display: none;
-      border-top: 1px dashed #E5E7EB;
-      padding-top: 25px;
-    }
-
-    .result-box {
-      background-color: #F8FAFC;
-      border: 1px solid #E2E8F0;
-      padding: 20px;
-      border-radius: 12px;
-      white-space: pre-wrap;
-      line-height: 1.6;
-      color: #334155;
-      font-size: 16px;
-    }
-
-    .loading {
-      text-align: center;
-      display: none;
-      color: #6B7280;
-      margin-top: 20px;
-      font-size: 14px;
-    }
-
-    /* 심사용 본문 섹션 */
-    .content-card {
-      background: white;
-      width: 100%;
-      max-width: 600px;
-      padding: 22px 24px;
-      border-radius: 20px;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.06);
-      margin-bottom: 18px;
-    }
-
-    .content-card h2 {
-      margin: 0 0 10px 0;
-      font-size: 18px;
-      color: var(--text);
-    }
-
-    .content-card p {
-      margin: 10px 0;
-      color: #374151;
-      line-height: 1.7;
-      font-size: 14.5px;
-    }
-
-    .content-card ul {
-      margin: 10px 0 0 18px;
-      color: #374151;
-      line-height: 1.7;
-      font-size: 14.5px;
-    }
-
-    .examples {
-      background: #F8FAFC;
-      border: 1px solid #E2E8F0;
-      border-radius: 14px;
-      padding: 14px;
-      margin-top: 12px;
-      font-size: 14px;
-      color: #334155;
-      line-height: 1.6;
-    }
-
-    .badge {
-      display: inline-block;
-      font-size: 12px;
-      font-weight: 700;
-      color: #4338CA;
-      background: rgba(79,70,229,0.10);
-      padding: 6px 10px;
-      border-radius: 999px;
-      margin-right: 6px;
-    }
-
-    .site-footer {
-      width: 100%;
-      text-align: center;
-      color: #9CA3AF;
-      font-size: 13px;
-      margin-top: auto;
-    }
-
-    .site-footer a { color: #6B7280; text-decoration: none; margin: 0 10px; }
-    .site-footer a:hover { text-decoration: underline; color: #374151; }
 
     @media (max-width: 480px) {
       .tab-btn {
         padding: 10px 4px;
         font-size: 13px;
         word-break: keep-all;
-        line-height: 1.3;
+        line-height: 1.25;
         height: auto;
-        white-space: normal;
       }
       .tabs { padding: 3px; }
-      .container { padding: 24px; }
-      .content-card { padding: 18px 18px; }
     }
+
+    textarea {
+      width: 100%;
+      height: 160px;
+      padding: 14px;
+      border: 2px solid #E5E7EB;
+      border-radius: 12px;
+      font-size: 16px;
+      resize: none;
+      outline: none;
+      font-family: inherit;
+      line-height: 1.5;
+      transition: 0.2s;
+    }
+
+    textarea:focus {
+      border-color: var(--primary);
+      box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.10);
+    }
+
+    .row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 8px;
+      gap: 10px;
+    }
+
+    .charCount {
+      font-size: 13px;
+      color: #9CA3AF;
+      font-weight: 600;
+    }
+
+    .hint {
+      font-size: 13px;
+      color: #6B7280;
+      line-height: 1.5;
+      margin: 0;
+    }
+
+    button.submit-btn {
+      margin-top: 12px;
+      width: 100%;
+      background-color: var(--primary);
+      color: white;
+      border: none;
+      padding: 14px 16px;
+      font-size: 16px;
+      font-weight: 800;
+      border-radius: 12px;
+      cursor: pointer;
+      transition: background-color 0.2s;
+      box-shadow: 0 8px 16px rgba(79,70,229,.16);
+    }
+    button.submit-btn:hover { background-color: #4338CA; }
+    button.submit-btn:disabled { background-color: #D1D5DB; cursor: not-allowed; box-shadow: none; }
+
+    .loading {
+      text-align: center;
+      display: none;
+      color: #6B7280;
+      margin-top: 14px;
+      font-size: 14px;
+      line-height: 1.6;
+    }
+
+    #resultArea {
+      margin-top: 14px;
+      display: none;
+      border-top: 1px dashed #E5E7EB;
+      padding-top: 14px;
+    }
+
+    .result-box {
+      background-color: #F8FAFC;
+      border: 1px solid #E2E8F0;
+      padding: 16px;
+      border-radius: 12px;
+      white-space: pre-wrap;
+      line-height: 1.65;
+      color: #334155;
+      font-size: 16px;
+    }
+
+    .links {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      margin-top: 10px;
+    }
+    @media (max-width: 560px) { .links { grid-template-columns: 1fr; } }
+
+    .link-card {
+      border: 1px solid #E5E7EB;
+      border-radius: 14px;
+      padding: 12px 12px;
+      background: #FFFFFF;
+      text-decoration: none;
+      color: #111827;
+      transition: 0.15s;
+    }
+    .link-card:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 10px 18px rgba(0,0,0,.06);
+      border-color: rgba(79,70,229,.35);
+    }
+    .link-title {
+      font-weight: 900;
+      font-size: 16px;
+      margin: 0 0 6px 0;
+    }
+    .link-desc {
+      margin: 0;
+      color: #6B7280;
+      font-size: 14px;
+      line-height: 1.6;
+    }
+
+    .mini-list {
+      margin: 10px 0 0;
+      padding-left: 18px;
+      color: #374151;
+      font-size: 14px;
+      line-height: 1.7;
+    }
+
+    .site-footer {
+      width: 100%;
+      max-width: 900px;
+      text-align: center;
+      color: #9CA3AF;
+      font-size: 13px;
+      margin-top: auto;
+      padding: 10px 0 0;
+    }
+    .site-footer a {
+      color: #6B7280;
+      text-decoration: none;
+      margin: 0 10px;
+    }
+    .site-footer a:hover { text-decoration: underline; color: #374151; }
   </style>
 </head>
 
 <body>
   <div class="container">
-    <h1>✨ The Tiny Step</h1>
-
-    <div class="tabs">
-      <button class="tab-btn active" onclick="setMode('business', this)">💼 비즈니스 표현</button>
-      <button class="tab-btn" onclick="setMode('travel', this)">✈️ 여행 영어</button>
-      <button class="tab-btn" onclick="setMode('oneliner', this)">💡 한줄 표현</button>
+    <div class="topbar">
+      <a class="brand" href="/">
+        <span class="logo">✨</span>
+        <span>The Tiny Step</span>
+      </a>
+      <div class="nav">
+        <a href="/email-apology.html" class="nav-tag">이메일</a>
+        <a href="/travel-airport.html" class="nav-tag">여행영어</a>
+        <a href="/oneliner-apology.html" class="nav-tag">한줄영어</a>
+      </div>
     </div>
 
-    <div class="input-wrapper">
-      <textarea id="userInput" maxlength="500" placeholder="교정하고 싶은 영어 이메일이나 문장을 입력하세요..."></textarea>
+    <h1>영어 표현 도우미</h1>
+    <p class="subtitle">
+      비즈니스 표현 · 여행 영어 · 한줄 표현까지.<br/>
+      입력하면 AI가 자연스러운 영어로 다듬어 드립니다.
+    </p>
+
+    <div class="split">
+      <!-- 왼쪽: 툴 -->
+      <div class="panel">
+        <div class="panel-title">
+          <span>AI 도우미</span>
+          <span class="pill">Ctrl + Enter 실행</span>
+        </div>
+
+        <div class="tabs" role="tablist" aria-label="모드 선택">
+          <button class="tab-btn active" data-mode="business" type="button">💼 비즈니스 표현</button>
+          <button class="tab-btn" data-mode="travel" type="button">✈️ 여행 영어</button>
+          <button class="tab-btn" data-mode="oneliner" type="button">💡 한줄 표현</button>
+        </div>
+
+        <textarea id="userInput" maxlength="1000" placeholder="교정하고 싶은 영어 이메일이나 문장을 입력하세요..."></textarea>
+
+        <div class="row">
+          <div class="charCount" id="charCount">0 / 1000</div>
+          <p class="hint" id="modeHint">Tip: 핵심만 써도 좋아요. 상황/대상/원하는 톤(정중/캐주얼)을 같이 적으면 더 정확해요.</p>
+        </div>
+
+        <button id="sendButton" class="submit-btn">교정하기</button>
+
+        <div class="loading" id="loading">
+          AI가 답변을 생각하고 있습니다... 🧠<br/>
+          <span style="font-size:12px; color:#9ca3af;">(보통 3~5초)</span>
+        </div>
+
+        <div id="resultArea">
+          <div class="result-box" id="resultText"></div>
+        </div>
+      </div>
+
+      <!-- 오른쪽: 콘텐츠 라이브러리 -->
+      <div class="panel">
+        <div class="panel-title">
+          <span>템플릿 & 표현 라이브러리</span>
+          <span class="pill">콘텐츠 페이지</span>
+        </div>
+
+        <p class="hint" style="margin-bottom:10px;">
+          아래 페이지는 “읽을거리/템플릿” 중심으로 구성되어 있어요. 상황에 맞게 골라서 복사해 쓰세요.
+        </p>
+
+        <div class="links" aria-label="콘텐츠 링크">
+          <a class="link-card" href="/email-request.html">
+            <p class="link-title">요청 이메일 템플릿</p>
+            <p class="link-desc">견적/자료/검토 요청 10선 + 표현 모음</p>
+          </a>
+          <a class="link-card" href="/email-followup.html">
+            <p class="link-title">미회신 리마인드 템플릿</p>
+            <p class="link-desc">팔로업 10선 + 부담 없는 문장</p>
+          </a>
+          <a class="link-card" href="/email-apology.html">
+            <p class="link-title">사과/정정 템플릿</p>
+            <p class="link-desc">지연/오류/첨부 누락 사과 10선</p>
+          </a>
+          <a class="link-card" href="/email-scheduling.html">
+            <p class="link-title">일정 조율 템플릿</p>
+            <p class="link-desc">미팅 제안/변경/취소 문장 10선</p>
+          </a>
+          <a class="link-card" href="/email-decline.html">
+            <p class="link-title">정중한 거절 템플릿</p>
+            <p class="link-desc">불가/보류/대안 제시 10선</p>
+          </a>
+          <a class="link-card" href="/email-thanks.html">
+            <p class="link-title">감사/칭찬 템플릿</p>
+            <p class="link-desc">협조 감사/칭찬 10선 + 표현 12개</p>
+          </a>
+          <a class="link-card" href="/travel-airport.html">
+            <p class="link-title">공항 영어 30선</p>
+            <p class="link-desc">체크인/환승/분실물 등 핵심 문장</p>
+          </a>
+          <a class="link-card" href="/travel-hotel.html">
+            <p class="link-title">호텔 영어 30선</p>
+            <p class="link-desc">체크인/추가 요청/체크아웃 문장</p>
+          </a>
+          <a class="link-card" href="/travel-restaurant.html">
+            <p class="link-title">식당 영어 30선</p>
+            <p class="link-desc">예약/주문/알레르기/계산 문장</p>
+          </a>
+          <a class="link-card" href="/oneliner-encourage.html">
+            <p class="link-title">응원 한줄 30선</p>
+            <p class="link-desc">업무/친구/가족에게 쓰기 좋은 문장</p>
+          </a>
+          <a class="link-card" href="/oneliner-apology.html">
+            <p class="link-title">사과 한줄 30선</p>
+            <p class="link-desc">지연/착오/정중 사과 표현</p>
+          </a>
+          <a class="link-card" href="/common-mistakes.html">
+            <p class="link-title">콩글리시 교정표 30선</p>
+            <p class="link-desc">Before/After로 자주 틀리는 패턴 정리</p>
+          </a>
+        </div>
+
+        <ul class="mini-list">
+          <li>비즈니스: “요청 → 기한 → 감사” 구조로 쓰면 회신률이 올라가요.</li>
+          <li>여행: 길게 말하기보다 “짧고 정확한 문장”이 제일 잘 통합니다.</li>
+          <li>한줄: 과한 칭찬/과장 없이, 자연스러운 톤 위주로 골랐어요.</li>
+        </ul>
+      </div>
     </div>
 
-    <button id="sendButton" class="submit-btn">교정하기</button>
-
-    <div class="loading" id="loading">
-      AI가 답변을 생각하고 있습니다... 🧠<br />
-      <span style="font-size:12px; color:#9ca3af;">(약 3~5초 소요됩니다)</span>
-    </div>
-
-    <div id="resultArea">
-      <div class="result-box" id="resultText"></div>
+    <div class="panel">
+      <div class="panel-title">
+        <span>안전 안내</span>
+        <span class="pill">입력 전 확인</span>
+      </div>
+      <ul class="mini-list">
+        <li>개인정보(주민번호/계좌/주소/비밀번호 등)는 입력하지 마세요.</li>
+        <li>민감한 회사 내부 정보는 요약하거나 가려서 입력하는 걸 추천합니다.</li>
+        <li>결과는 참고용이며, 최종 발송 전 본문/첨부/수신자 확인은 꼭 해주세요.</li>
+      </ul>
     </div>
   </div>
 
-  <section class="content-card" aria-label="서비스 소개">
-    <h2>영어 표현이 막힐 때, 가장 작은 한 걸음</h2>
-    <p>
-      <span class="badge">Business</span>
-      <span class="badge">Travel</span>
-      <span class="badge">One-liner</span>
-      <br />
-      The Tiny Step은 상황에 맞는 영어 문장을 더 자연스럽고 매끄럽게 다듬어주는 영어 표현 도우미입니다.
-      번역기처럼 직역된 문장이나 어색한 콩글리시를 “상대가 읽기 편한 영어”로 정리해, 이메일/메신저/여행 회화까지 빠르게 써먹을 수 있게 도와드립니다.
-    </p>
-
-    <p><strong>이럴 때 특히 유용해요.</strong></p>
-    <ul>
-      <li>업무 이메일에서 톤이 너무 딱딱하거나 반대로 너무 캐주얼한 것 같을 때</li>
-      <li>요청/리마인드/사과/일정 조율처럼 미묘한 뉘앙스가 중요한 메시지를 보낼 때</li>
-      <li>여행 중 식당·공항·호텔 등에서 바로 말할 한 문장이 급할 때</li>
-      <li>짧게 센스 있는 한 줄(감사/응원/칭찬/사과)을 찾고 싶을 때</li>
-    </ul>
-
-    <div class="examples">
-      <strong>짧은 예시</strong><br><br>
-      <strong>Before</strong> : Can we meeting tomorrow 3pm?<br>
-      <strong>After</strong> : Would you be available to meet tomorrow at 3 PM?<br>
-      <em>→ 문법을 자연스럽게 고치고, 정중한 제안 표현으로 다듬었습니다.</em><br><br>
-
-      <strong>상황</strong> : 호텔에서 수건을 더 요청하고 싶어요.<br>
-      <strong>추천</strong> : Could I get a couple of extra towels, please?<br><br>
-
-      <strong>상황</strong> : “고마워, 큰 도움이 됐어” 한 줄로 말하고 싶어요.<br>
-      <strong>추천</strong> : Thanks—this really helped a lot.
-    </div>
-
-    <p>
-      <strong>안전하게 사용하기</strong><br />
-      개인 정보(전화번호/주소/계좌/주민번호 등)나 회사 기밀(내부 자료, 고객 정보)은 입력하지 마세요.
-      결과는 참고용이며, 최종 발송/제출 책임은 사용자에게 있습니다.
-    </p>
-  </section>
-
   <footer class="site-footer">
-    <p>&copy; 2026 The Tiny Step. All rights reserved.</p>
-    <div style="margin-top: 10px;">
-      <a href="/about.html">About</a> |
-      <a href="/guide.html">User Guide</a> |
-      <a href="/examples.html">Examples</a> |
-      <a href="/faq.html">FAQ</a> |
-      <a href="/terms.html">Terms</a> |
-      <a href="/privacy.html">Privacy Policy</a> |
+    <p style="margin: 0 0 8px;">&copy; 2026 The Tiny Step. All rights reserved.</p>
+    <div>
+      <a href="/about.html">About</a>
+      <a href="/guide.html">Guide</a>
+      <a href="/examples.html">Examples</a>
+      <a href="/faq.html">FAQ</a>
+      <a href="/terms.html">Terms</a>
+      <a href="/privacy.html">Privacy</a>
       <a href="mailto:chaee1008@gmail.com">Contact</a>
     </div>
   </footer>
 
   <script>
-    const textarea = document.getElementById('userInput');
-    const sendButton = document.getElementById('sendButton');
-    const loading = document.getElementById("loading");
-    const resultArea = document.getElementById("resultArea");
-    const resultText = document.getElementById("resultText");
-    const tabBtns = document.querySelectorAll('.tab-btn');
-
-    // ✅ Cloud Run / Functions 엔드포인트
+    // ===== 설정 =====
+    // ⚠️ 여기 URL은 네 Cloud Run(또는 Functions) 엔드포인트로 유지
     const FUNCTION_URL = "https://askgemini-mdfanbh2ya-uc.a.run.app";
 
+    const textarea   = document.getElementById('userInput');
+    const sendButton = document.getElementById('sendButton');
+    const charCount  = document.getElementById('charCount');
+    const loading    = document.getElementById('loading');
+    const resultArea = document.getElementById('resultArea');
+    const resultText = document.getElementById('resultText');
+    const tabBtns    = document.querySelectorAll('.tab-btn');
+    const modeHint   = document.getElementById('modeHint');
+
+    const MAX_CHARS = 1000;
     let currentMode = 'business';
 
-    function setMode(mode, btnEl) {
-      currentMode = mode;
+    // ===== 글자수 카운트 =====
+    function updateCount() {
+      const n = textarea.value.length;
+      charCount.textContent = `${n} / ${MAX_CHARS}`;
+      charCount.style.color = (n >= MAX_CHARS) ? '#EF4444' : '#9CA3AF';
+    }
+    textarea.addEventListener('input', updateCount);
+    updateCount();
 
-      tabBtns.forEach(btn => btn.classList.remove('active'));
-      if (btnEl) btnEl.classList.add('active');
-
+    // ===== 모드 전환 =====
+    function applyModeUI(mode) {
       if (mode === 'business') {
         textarea.placeholder = "교정하고 싶은 영어 이메일이나 문장을 입력하세요...";
         sendButton.innerText = "교정하기";
+        modeHint.textContent = "Tip: 상황/대상/원하는 톤(정중/캐주얼)을 같이 적으면 더 정확해요.";
       } else if (mode === 'travel') {
-        textarea.placeholder = "어떤 상황인가요? (예: 식당에서 물 더 달라고 할 때 / 공항에서 짐 찾을 때)";
+        textarea.placeholder = "어떤 상황인가요? (예: 공항에서 환승 게이트 물어보기 / 식당에서 알레르기 설명하기)";
         sendButton.innerText = "표현 추천받기";
+        modeHint.textContent = "Tip: 장소/상황을 구체적으로 적을수록 자연스러운 문장이 나와요.";
       } else if (mode === 'oneliner') {
-        textarea.placeholder = "느낌이나 키워드를 입력하세요 (예: 힘내, 고마워, 칭찬, 사과)";
+        textarea.placeholder = "느낌이나 키워드를 입력하세요 (예: 힘내, 고마워, 칭찬, 사과, 거절)";
         sendButton.innerText = "한줄 표현 찾기";
+        modeHint.textContent = "Tip: 상대(친구/상사/고객)와 톤(캐주얼/정중)을 같이 적으면 좋아요.";
       }
-
-      resultArea.style.display = 'none';
-      resultText.innerText = '';
-      textarea.value = '';
-      textarea.focus();
     }
 
+    tabBtns.forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        const mode = btn.getAttribute('data-mode');
+        currentMode = mode;
+
+        tabBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+
+        // 결과 숨김 + 입력 정리
+        resultArea.style.display = 'none';
+        resultText.innerText = '';
+        textarea.value = '';
+        updateCount();
+        applyModeUI(mode);
+        textarea.focus();
+      });
+    });
+
+    applyModeUI(currentMode);
+
+    // ===== AI 요청 =====
     async function askAI() {
       const input = textarea.value.trim();
 
@@ -343,6 +547,7 @@
         return;
       }
 
+      // 로딩 상태
       sendButton.disabled = true;
       loading.style.display = "block";
       resultArea.style.display = "none";
@@ -350,15 +555,23 @@
 
       try {
         const url = `${FUNCTION_URL}?text=${encodeURIComponent(input)}&option=${encodeURIComponent(currentMode)}`;
-        const response = await fetch(url, { method: "GET" });
+        const response = await fetch(url);
+
+        let data = null;
+        try { data = await response.json(); }
+        catch (_) { data = { reply: "" }; }
 
         if (!response.ok) {
-          const errText = await response.text();
-          throw new Error(`HTTP ${response.status} - ${errText || 'Server error'}`);
+          // 서버가 에러 메시지를 reply로 주는 경우 표시
+          const msg = (data && data.reply) ? data.reply : "서버 응답 오류";
+          throw new Error(msg);
         }
 
-        const data = await response.json();
-        resultText.innerText = (data && data.reply) ? data.reply : "응답 형식이 올바르지 않습니다.";
+        if (!data || typeof data.reply !== "string") {
+          throw new Error("응답 형식이 올바르지 않습니다.");
+        }
+
+        resultText.innerText = data.reply;
         resultArea.style.display = "block";
         resultArea.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
 
@@ -372,11 +585,8 @@
     }
 
     sendButton.addEventListener('click', askAI);
-
     textarea.addEventListener('keydown', (e) => {
-      if (e.ctrlKey && e.key === 'Enter') {
-        askAI();
-      }
+      if (e.ctrlKey && e.key === 'Enter') askAI();
     });
   </script>
 </body>
