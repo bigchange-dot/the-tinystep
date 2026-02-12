@@ -8,8 +8,6 @@
   <meta name="description" content="비즈니스 영어 표현, 여행 영어, 상황별 한줄 영어 표현까지 AI가 도와드립니다. 템플릿/표현 라이브러리도 함께 제공합니다." />
   <meta name="robots" content="index,follow" />
 
-  <!-- ✅ AdSense 승인 전까지는 스크립트/광고 코드 넣지 마세요 -->
-
   <style>
     :root { --primary:#4F46E5; --bg:#F3F4F6; --text:#1F2937; }
 
@@ -70,24 +68,24 @@
 
     .nav {
       display: flex;
-      gap: 8px; /* Added gap for spacing between tags */
-      flex-wrap: wrap; /* Allow tags to wrap on smaller screens */
-      justify-content: flex-end; /* Align tags to the right */
+      gap: 8px;
+      flex-wrap: wrap;
+      justify-content: flex-end;
     }
 
     .nav-tag {
-      background-color: var(--primary); /* Blue background */
-      color: white; /* White text */
+      background-color: var(--primary);
+      color: white;
       text-decoration: none;
       font-size: 14px;
       font-weight: 700;
       padding: 6px 12px;
-      border-radius: 999px; /* Pill shape */
+      border-radius: 999px;
       white-space: nowrap;
       transition: background-color 0.2s;
     }
     .nav-tag:hover {
-      background-color: #4338CA; /* Darker blue on hover */
+      background-color: #4338CA;
       text-decoration: none;
     }
 
@@ -306,6 +304,9 @@
       font-size: 14px;
       line-height: 1.7;
     }
+    .mini-list li { margin-bottom: 6px; }
+    .mini-list a { color: var(--primary); text-decoration: none; font-weight: 600; }
+    .mini-list a:hover { text-decoration: underline; }
 
     .site-footer {
       width: 100%;
@@ -346,7 +347,6 @@
     </p>
 
     <div class="split">
-      <!-- 왼쪽: 툴 -->
       <div class="panel">
         <div class="panel-title">
           <span>AI 도우미</span>
@@ -378,7 +378,6 @@
         </div>
       </div>
 
-      <!-- 오른쪽: 콘텐츠 라이브러리 -->
       <div class="panel">
         <div class="panel-title">
           <span>템플릿 & 표현 라이브러리</span>
@@ -447,7 +446,56 @@
         </ul>
       </div>
     </div>
-
+    
+    <div class="panel">
+      <div class="panel-title"><span>Latest Posts</span><span class="pill">New</span></div>
+      <ul class="mini-list">
+        <li><a href="/posts/asap-alternatives.html">ASAP이 무례하게 들릴 때: 대안 표현 12개</a></li>
+        <li><a href="/posts/checking-in-alternatives.html">“Just checking in”이 부담될 때: 팔로업 표현 12개</a></li>
+        <li><a href="/posts/could-vs-would.html">Could you vs Would you: 톤 차이 정리</a></li>
+        <li><a href="/posts/polite-deadline.html">정중하게 기한 말하는 법: 마감 표현 15개</a></li>
+        <li><a href="/posts/meeting-reschedule.html">미팅 일정 변경 영어: 문장 12개</a></li>
+      </ul>
+    </div>
+    <div class="panel" id="tone-guide">
+      <div class="panel-title">
+        <span>비즈니스 영어 톤 가이드</span>
+        <span class="pill">정중 · 기본 · 단호</span>
+      </div>
+    
+      <p class="hint" style="margin-top:0;">
+        같은 내용도 톤에 따라 상대가 느끼는 압박감이 달라집니다. 아래 3가지 톤 중 하나를 고르고,
+        문장 끝을 “요청 + 기한 + 감사” 구조로 마무리하면 회신률이 확 올라가요.
+      </p>
+    
+      <div class="result-box" style="font-size:15px;">
+        <b>1) 정중(Highly polite)</b><br>
+        상대의 선택권을 크게 주고, 부드럽게 요청할 때 좋습니다(외부 고객/처음 연락/상위 직급).<br>
+        • Could you please share the updated file when you have a moment?<br>
+        • If it’s possible, would you mind confirming by Friday?<br><br>
+    
+        <b>2) 기본(Neutral)</b><br>
+        가장 무난한 기본 톤입니다(내부 협업/평소 거래처). 짧고 명확하게 쓰되, 감사 한 줄을 꼭 붙이세요.<br>
+        • Please send the updated file by Friday.<br>
+        • Could you confirm the schedule by 3 PM today? Thanks in advance.<br><br>
+    
+        <b>3) 단호(Direct but professional)</b><br>
+        일정/리스크가 걸릴 때 필요한 톤입니다. 공격적으로 들리지 않게 “이유 + 기한 + 대안”을 같이 제시하세요.<br>
+        • To stay on track, we need your confirmation by Friday. If that’s difficult, please suggest an alternative time.<br>
+        • We can proceed once we receive the final version. Please share it by EOD today.<br><br>
+    
+        <b>자주 하는 실수 3가지</b><br>
+        ① ASAP처럼 급하게 들리는 표현만 쓰기 → 기한을 구체화(“by Friday / by 3 PM”)<br>
+        ② 요청만 하고 배경이 없음 → 한 줄 이유 추가(“to finalize the report…”)<br>
+        ③ 무조건적인 압박 → 대안 제시(“If not, please propose another time.”)<br><br>
+    
+        <b>추천 바로가기</b><br>
+        • <a href="/email-request.html" style="color:#4F46E5; text-decoration:underline; font-weight:600;">요청 템플릿 보기</a><br>
+        • <a href="/email-followup.html" style="color:#4F46E5; text-decoration:underline; font-weight:600;">미회신 팔로업 보기</a><br>
+        • <a href="/email-decline.html" style="color:#4F46E5; text-decoration:underline; font-weight:600;">정중한 거절 보기</a>
+      </div>
+    </div>
+    
     <div class="panel">
       <div class="panel-title">
         <span>안전 안내</span>
@@ -476,17 +524,17 @@
 
   <script>
     // ===== 설정 =====
-    // ⚠️ 여기 URL은 네 Cloud Run(또는 Functions) 엔드포인트로 유지
+    // ⚠️ [중요] 배포된 실제 백엔드 주소로 확인해주세요!
     const FUNCTION_URL = "https://askgemini-mdfanbh2ya-uc.a.run.app";
 
-    const textarea   = document.getElementById('userInput');
+    const textarea = document.getElementById('userInput');
     const sendButton = document.getElementById('sendButton');
-    const charCount  = document.getElementById('charCount');
-    const loading    = document.getElementById('loading');
+    const charCount = document.getElementById('charCount');
+    const loading = document.getElementById('loading');
     const resultArea = document.getElementById('resultArea');
     const resultText = document.getElementById('resultText');
-    const tabBtns    = document.querySelectorAll('.tab-btn');
-    const modeHint   = document.getElementById('modeHint');
+    const tabBtns = document.querySelectorAll('.tab-btn');
+    const modeHint = document.getElementById('modeHint');
 
     const MAX_CHARS = 1000;
     let currentMode = 'business';

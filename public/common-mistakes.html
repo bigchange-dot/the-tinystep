@@ -3,17 +3,17 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>콩글리시/오역 교정표 30선 - The Tiny Step</title>
-  <meta name="description" content="한국식 영어 표현을 자연스러운 비즈니스/일상 영어로 바꾸는 교정표 30개."/>
+  <title>콩글리시/오역 교정표 50선 - The Tiny Step</title>
+  <meta name="description" content="한국식 영어 표현을 자연스러운 비즈니스/일상 영어로 바꾸는 교정 50선."/>
   <style>
     :root{--primary:#4F46E5;--bg:#F3F4F6;--text:#1F2937;}
     body{font-family:'Pretendard',-apple-system,BlinkMacSystemFont,system-ui,sans-serif;background:var(--bg);margin:0;padding:20px;box-sizing:border-box;}
     .wrap{max-width:980px;margin:0 auto;}
     .card{background:#fff;border-radius:20px;box-shadow:0 10px 30px rgba(0,0,0,.06);padding:26px;}
+    
     .top{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-bottom:12px}
     a.brand{font-weight:900;color:var(--text);text-decoration:none;font-size:16px}
-    nav a{color:#6B7280;text-decoration:none;margin-left:10px;font-size:14px}
-    nav a:hover{color:#374151;text-decoration:underline}
+    
     .nav {
       display: flex;
       gap: 8px;
@@ -31,23 +31,65 @@
       white-space: nowrap;
       transition: background-color 0.2s;
     }
-    .nav-tag:hover {
-      background-color: #4338CA;
-      text-decoration: none;
-    }
+    .nav-tag:hover { background-color: #4338CA; }
+    
     h1{margin:8px 0 6px;font-size:24px;color:var(--text)}
-    p{color:#374151;line-height:1.75;font-size:15px}
-    .hint{color:#6B7280;font-size:14px}
-    table{width:100%;border-collapse:separate;border-spacing:0 10px;margin-top:14px}
-    th{font-size:13px;color:#6B7280;text-align:left;padding:0 10px}
-    td{background:#F8FAFC;border:1px solid #E2E8F0;padding:12px 10px;border-radius:14px;color:#111827;vertical-align:top}
-    .bad{color:#b91c1c;font-weight:800}
-    .good{color:#065f46;font-weight:800}
-    .note{color:#6B7280;font-size:13px;margin-top:6px;line-height:1.5}
-    footer{margin-top:16px;text-align:center;color:#9CA3AF;font-size:13px}
+    p{color:#374151;line-height:1.6;font-size:15px}
+    .hint{color:#6B7280;font-size:14px; margin-bottom: 20px;}
+
+    /* ▼▼▼ 카드 스타일 추가 (테이블 스타일 삭제됨) ▼▼▼ */
+    .mistake-container {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+    
+    /* 화면이 넓으면 2단으로 보기 (선택사항) */
+    @media (min-width: 768px) {
+        .mistake-container { grid-template-columns: 1fr 1fr; }
+    }
+
+    .mistake-item {
+        background: #F8FAFC;
+        border: 1px solid #E2E8F0;
+        border-radius: 12px;
+        padding: 18px;
+        transition: transform 0.2s;
+    }
+    .mistake-item:hover {
+        border-color: var(--primary);
+        transform: translateY(-2px);
+    }
+    
+    .mistake-item h3 {
+        margin: 0 0 10px 0;
+        font-size: 16px;
+        color: #B91C1C; /* 붉은색 (Bad Case 강조) */
+        font-weight: 700;
+    }
+    .mistake-item p {
+        margin: 5px 0;
+        font-size: 14px;
+        color: #4B5563;
+    }
+    .mistake-item b {
+        color: #111827;
+        margin-right: 5px;
+    }
+    .mistake-item .good-text {
+        color: #047857; /* 초록색 (Good Case 강조) */
+        font-weight: 700;
+    }
+    /* ▲▲▲ 스타일 끝 ▲▲▲ */
+
+    footer{margin-top:30px;text-align:center;color:#9CA3AF;font-size:13px}
     footer a{color:#6B7280;text-decoration:none;margin:0 8px}
     footer a:hover{text-decoration:underline;color:#374151}
   </style>
+  
+  <meta name="google-adsense-account" content="ca-pub-5634467403173492">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5634467403173492"
+     crossorigin="anonymous"></script>
 </head>
 <body>
   <div class="wrap">
@@ -61,57 +103,266 @@
         </nav>
       </div>
 
-      <h1>콩글리시/오역 교정표 30선</h1>
-      <p class="hint">“단어는 맞는데 문장이 어색한” 경우가 많아서, 자주 쓰는 패턴을 통째로 자연스럽게 바꾼 예시야.</p>
+      <h1>콩글리시/오역 교정표 50선</h1>
+      <p class="hint">한국식 직역 표현(Before)과 원어민이 실제로 쓰는 자연스러운 표현(After)을 비교해보세요.</p>
 
-      <table>
-        <thead>
-          <tr>
-            <th style="width:38%;">Before (어색/직역)</th>
-            <th style="width:38%;">After (자연/권장)</th>
-            <th style="width:24%;">설명</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr><td><div class="bad">Can we meeting tomorrow?</div></td><td><div class="good">Can we meet tomorrow?</div></td><td>동사 형태 수정</td></tr>
-          <tr><td><div class="bad">I will contact you again.</div></td><td><div class="good">I’ll follow up with you.</div></td><td>업무 리마인드 톤</td></tr>
-          <tr><td><div class="bad">Please understand me.</div></td><td><div class="good">I appreciate your understanding.</div></td><td>부드러운 표현</td></tr>
-          <tr><td><div class="bad">I’m sorry to disturb you.</div></td><td><div class="good">Sorry to bother you.</div></td><td>자연스러운 관용</td></tr>
-          <tr><td><div class="bad">I will share you the file.</div></td><td><div class="good">I’ll share the file with you.</div></td><td>전치사 필요</td></tr>
-          <tr><td><div class="bad">Please check it and reply me.</div></td><td><div class="good">Could you review it and let me know?</div></td><td>비즈니스 톤</td></tr>
-          <tr><td><div class="bad">I want to request you.</div></td><td><div class="good">I’d like to ask for your help.</div></td><td>request 동사 주의</td></tr>
-          <tr><td><div class="bad">Thanks for your helping.</div></td><td><div class="good">Thank you for your help.</div></td><td>help는 보통 명사</td></tr>
-          <tr><td><div class="bad">I’ll do my best.</div></td><td><div class="good">I’ll do my best to <em>[action]</em>.</div></td><td>뒤에 목적 넣기</td></tr>
-          <tr><td><div class="bad">We have a schedule.</div></td><td><div class="good">We have a meeting scheduled.</div></td><td>문맥 명확화</td></tr>
+      <div class="mistake-container">
+        <div class="mistake-item">
+          <h3>1) Can we meeting tomorrow?</h3>
+          <p><b>왜 어색?</b> 동사 형태 문법 오류 (meeting → meet).</p>
+          <p><b>대안</b> <span class="good-text">Can we meet tomorrow?</span></p>
+        </div>
+        <div class="mistake-item">
+          <h3>2) I will contact you again.</h3>
+          <p><b>왜 어색?</b> '다시 연락하겠다'는 너무 직역투입니다.</p>
+          <p><b>대안</b> <span class="good-text">I’ll follow up with you.</span></p>
+        </div>
+        <div class="mistake-item">
+          <h3>3) Please understand me.</h3>
+          <p><b>왜 어색?</b> '나를 이해해줘'는 감정 호소처럼 들립니다.</p>
+          <p><b>대안</b> <span class="good-text">I appreciate your understanding.</span></p>
+        </div>
+        <div class="mistake-item">
+          <h3>4) I’m sorry to disturb you.</h3>
+          <p><b>왜 어색?</b> disturb는 '방해하다'라는 강한 뉘앙스입니다.</p>
+          <p><b>대안</b> <span class="good-text">Sorry to bother you.</span></p>
+        </div>
+        <div class="mistake-item">
+          <h3>5) I will share you the file.</h3>
+          <p><b>왜 어색?</b> share 뒤에는 사람 앞에 with가 필요합니다.</p>
+          <p><b>대안</b> <span class="good-text">I’ll share the file with you.</span></p>
+        </div>
+        <div class="mistake-item">
+          <h3>6) Please check it and reply me.</h3>
+          <p><b>왜 어색?</b> reply 뒤에는 to가 필요하며, 명령조입니다.</p>
+          <p><b>대안</b> <span class="good-text">Could you review it and let me know?</span></p>
+        </div>
+        <div class="mistake-item">
+          <h3>7) I want to request you.</h3>
+          <p><b>왜 어색?</b> 사람을 request(요청)할 수는 없습니다.</p>
+          <p><b>대안</b> <span class="good-text">I’d like to ask for your help.</span></p>
+        </div>
+        <div class="mistake-item">
+          <h3>8) Thanks for your helping.</h3>
+          <p><b>왜 어색?</b> help는 명사로 쓰는 게 자연스럽습니다.</p>
+          <p><b>대안</b> <span class="good-text">Thank you for your help.</span></p>
+        </div>
+        <div class="mistake-item">
+          <h3>9) I’ll do my best.</h3>
+          <p><b>왜 어색?</b> 무엇을 할 것인지 구체적으로 밝혀야 합니다.</p>
+          <p><b>대안</b> <span class="good-text">I’ll do my best to [action].</span></p>
+        </div>
+        <div class="mistake-item">
+          <h3>10) We have a schedule.</h3>
+          <p><b>왜 어색?</b> schedule은 '일정표' 자체를 의미합니다.</p>
+          <p><b>대안</b> <span class="good-text">We have a meeting scheduled.</span></p>
+        </div>
 
-          <tr><td><div class="bad">Please give me a call.</div></td><td><div class="good">Could you give me a call?</div></td><td>요청형으로 완화</td></tr>
-          <tr><td><div class="bad">I will do it ASAP.</div></td><td><div class="good">I’ll take care of it as soon as possible.</div></td><td>자연스러운 문장</td></tr>
-          <tr><td><div class="bad">Let’s keep in touch.</div></td><td><div class="good">Let’s stay in touch.</div></td><td>관용 표현</td></tr>
-          <tr><td><div class="bad">We are preparing now.</div></td><td><div class="good">We’re working on it now.</div></td><td>업무 상황 표현</td></tr>
-          <tr><td><div class="bad">I will reflect it.</div></td><td><div class="good">I’ll incorporate your feedback.</div></td><td>reflect 오해</td></tr>
-          <tr><td><div class="bad">The meeting was finished.</div></td><td><div class="good">The meeting has ended.</div></td><td>자연스러운 완료</td></tr>
-          <tr><td><div class="bad">I’m very busy now.</div></td><td><div class="good">I’m tied up at the moment.</div></td><td>부드러운 표현</td></tr>
-          <tr><td><div class="bad">I’ll send it to you later.</div></td><td><div class="good">I’ll send it over shortly.</div></td><td>업무 톤</td></tr>
-          <tr><td><div class="bad">Please wait a moment.</div></td><td><div class="good">One moment, please.</div></td><td>간결/자연</td></tr>
-          <tr><td><div class="bad">I will be late a little.</div></td><td><div class="good">I’ll be a little late.</div></td><td>어순</td></tr>
+        <div class="mistake-item">
+          <h3>11) Please give me a call.</h3>
+          <p><b>왜 어색?</b> 명령문보다는 의문문이 정중합니다.</p>
+          <p><b>대안</b> <span class="good-text">Could you give me a call?</span></p>
+        </div>
+        <div class="mistake-item">
+          <h3>12) I will do it ASAP.</h3>
+          <p><b>왜 어색?</b> ASAP은 독촉하는 느낌을 줄 수 있습니다.</p>
+          <p><b>대안</b> <span class="good-text">I’ll take care of it as soon as possible.</span></p>
+        </div>
+        <div class="mistake-item">
+          <h3>13) Let’s keep in touch.</h3>
+          <p><b>왜 어색?</b> Stay in touch가 더 현대적이고 자연스럽습니다.</p>
+          <p><b>대안</b> <span class="good-text">Let’s stay in touch.</span></p>
+        </div>
+        <div class="mistake-item">
+          <h3>14) We are preparing now.</h3>
+          <p><b>왜 어색?</b> '준비 중'보다는 '작업 중'이 명확합니다.</p>
+          <p><b>대안</b> <span class="good-text">We’re working on it now.</span></p>
+        </div>
+        <div class="mistake-item">
+          <h3>15) I will reflect it.</h3>
+          <p><b>왜 어색?</b> reflect는 '반사하다' 의미가 강합니다.</p>
+          <p><b>대안</b> <span class="good-text">I’ll incorporate your feedback.</span></p>
+        </div>
+        <div class="mistake-item">
+          <h3>16) The meeting was finished.</h3>
+          <p><b>왜 어색?</b> 수동태보다 자동사나 완료형이 깔끔합니다.</p>
+          <p><b>대안</b> <span class="good-text">The meeting has ended.</span></p>
+        </div>
+        <div class="mistake-item">
+          <h3>17) I’m very busy now.</h3>
+          <p><b>왜 어색?</b> 너무 직설적이어서 거절처럼 들립니다.</p>
+          <p><b>대안</b> <span class="good-text">I’m tied up at the moment.</span></p>
+        </div>
+        <div class="mistake-item">
+          <h3>18) I’ll send it to you later.</h3>
+          <p><b>왜 어색?</b> later는 막연합니다. shortly가 전문적입니다.</p>
+          <p><b>대안</b> <span class="good-text">I’ll send it over shortly.</span></p>
+        </div>
+        <div class="mistake-item">
+          <h3>19) Please wait a moment.</h3>
+          <p><b>왜 어색?</b> 명령조입니다. One moment가 관용적입니다.</p>
+          <p><b>대안</b> <span class="good-text">One moment, please.</span></p>
+        </div>
+        <div class="mistake-item">
+          <h3>20) I will be late a little.</h3>
+          <p><b>왜 어색?</b> 어순이 어색합니다 (a little late).</p>
+          <p><b>대안</b> <span class="good-text">I’ll be a little late.</span></p>
+        </div>
 
-          <tr><td><div class="bad">I’m agree.</div></td><td><div class="good">I agree.</div></td><td>불필요한 be</td></tr>
-          <tr><td><div class="bad">I can’t understand.</div></td><td><div class="good">I’m not sure I understand.</div></td><td>부드럽게</td></tr>
-          <tr><td><div class="bad">Please tell me the detail.</div></td><td><div class="good">Could you share more details?</div></td><td>복수형/톤</td></tr>
-          <tr><td><div class="bad">Let’s discuss about it.</div></td><td><div class="good">Let’s discuss it.</div></td><td>about 불필요</td></tr>
-          <tr><td><div class="bad">I will inform to you.</div></td><td><div class="good">I’ll let you know.</div></td><td>자연 표현</td></tr>
-          <tr><td><div class="bad">I’m sorry for inconvenience.</div></td><td><div class="good">Sorry for the inconvenience.</div></td><td>관사/구</td></tr>
-          <tr><td><div class="bad">Please kindly…</div></td><td><div class="good">Could you please…</div></td><td>과한 “kindly” 주의</td></tr>
-          <tr><td><div class="bad">We need to check it carefully.</div></td><td><div class="good">We’ll review it carefully.</div></td><td>업무 표현</td></tr>
-          <tr><td><div class="bad">I will share you soon.</div></td><td><div class="good">I’ll share it with you soon.</div></td><td>목적어/전치사</td></tr>
+        <div class="mistake-item">
+          <h3>21) I’m agree.</h3>
+          <p><b>왜 어색?</b> agree는 동사이므로 be동사가 불필요합니다.</p>
+          <p><b>대안</b> <span class="good-text">I agree.</span></p>
+        </div>
+        <div class="mistake-item">
+          <h3>22) I can’t understand.</h3>
+          <p><b>왜 어색?</b> '이해가 안 된다(능력 부족)'처럼 들립니다.</p>
+          <p><b>대안</b> <span class="good-text">I’m not sure I understand.</span></p>
+        </div>
+        <div class="mistake-item">
+          <h3>23) Please tell me the detail.</h3>
+          <p><b>왜 어색?</b> 세부사항은 보통 복수형(details)을 씁니다.</p>
+          <p><b>대안</b> <span class="good-text">Could you share more details?</span></p>
+        </div>
+        <div class="mistake-item">
+          <h3>24) Let’s discuss about it.</h3>
+          <p><b>왜 어색?</b> discuss 뒤에는 about을 쓰지 않습니다.</p>
+          <p><b>대안</b> <span class="good-text">Let’s discuss it.</span></p>
+        </div>
+        <div class="mistake-item">
+          <h3>25) I will inform to you.</h3>
+          <p><b>왜 어색?</b> inform 뒤에 바로 목적어가 옵니다 (to 삭제).</p>
+          <p><b>대안</b> <span class="good-text">I’ll let you know.</span></p>
+        </div>
+        <div class="mistake-item">
+          <h3>26) I’m sorry for inconvenience.</h3>
+          <p><b>왜 어색?</b> 관사(the)가 빠졌습니다.</p>
+          <p><b>대안</b> <span class="good-text">Sorry for the inconvenience.</span></p>
+        </div>
+        <div class="mistake-item">
+          <h3>27) Please kindly…</h3>
+          <p><b>왜 어색?</b> kindly는 구식 표현이거나 강압적일 수 있습니다.</p>
+          <p><b>대안</b> <span class="good-text">Could you please…</span></p>
+        </div>
+        <div class="mistake-item">
+          <h3>28) We need to check it carefully.</h3>
+          <p><b>왜 어색?</b> check보다는 review가 업무에 적합합니다.</p>
+          <p><b>대안</b> <span class="good-text">We’ll review it carefully.</span></p>
+        </div>
+        <div class="mistake-item">
+          <h3>29) I will share you soon.</h3>
+          <p><b>왜 어색?</b> 목적어(it)와 전치사(with)가 필요합니다.</p>
+          <p><b>대안</b> <span class="good-text">I’ll share it with you soon.</span></p>
+        </div>
+        <div class="mistake-item">
+          <h3>30) If you have time, please…</h3>
+          <p><b>왜 어색?</b> '시간 있으면'은 덜 전문적입니다.</p>
+          <p><b>대안</b> <span class="good-text">When you have a moment, could you…</span></p>
+        </div>
 
-          <tr><td><div class="bad">If you have time, please…</div></td><td><div class="good">When you have a moment, could you…</div></td><td>자연/정중</td></tr>
-        </tbody>
-      </table>
+        <div class="mistake-item">
+          <h3>31) I will contact you later.</h3>
+          <p><b>왜 어색?</b> 막연하게 들리고 책임 회피처럼 느껴집니다.</p>
+          <p><b>대안</b> <span class="good-text">I’ll follow up by tomorrow.</span></p>
+        </div>
+        <div class="mistake-item">
+          <h3>32) Please check it.</h3>
+          <p><b>왜 어색?</b> 무엇을 체크해야 하는지 불명확합니다.</p>
+          <p><b>대안</b> <span class="good-text">Please review the file.</span></p>
+        </div>
+        <div class="mistake-item">
+          <h3>33) I’m sorry to bother you.</h3>
+          <p><b>왜 어색?</b> 과하게 저자세로 보일 수 있습니다.</p>
+          <p><b>대안</b> <span class="good-text">Thanks for your time.</span></p>
+        </div>
+        <div class="mistake-item">
+          <h3>34) It’s my mistake.</h3>
+          <p><b>왜 어색?</b> 너무 단정적으로 '내 잘못'만 강조합니다.</p>
+          <p><b>대안</b> <span class="good-text">Apologies for the confusion.</span></p>
+        </div>
+        <div class="mistake-item">
+          <h3>35) I’ll do my best.</h3>
+          <p><b>왜 어색?</b> 의지는 보이지만 '확정이 아니다'로 들립니다.</p>
+          <p><b>대안</b> <span class="good-text">I will deliver it by Friday.</span></p>
+        </div>
+        <div class="mistake-item">
+          <h3>36) I want you to…</h3>
+          <p><b>왜 어색?</b> 명령처럼 들릴 수 있습니다.</p>
+          <p><b>대안</b> <span class="good-text">Could you please…?</span></p>
+        </div>
+        <div class="mistake-item">
+          <h3>37) You have to…</h3>
+          <p><b>왜 어색?</b> 강압적으로 들립니다(특히 외부 소통 시).</p>
+          <p><b>대안</b> <span class="good-text">It would be necessary to…</span></p>
+        </div>
+        <div class="mistake-item">
+          <h3>38) I think it is impossible.</h3>
+          <p><b>왜 어색?</b> 너무 단정적이고 대안을 닫아버립니다.</p>
+          <p><b>대안</b> <span class="good-text">It may be challenging due to...</span></p>
+        </div>
+        <div class="mistake-item">
+          <h3>39) I will send you ASAP.</h3>
+          <p><b>왜 어색?</b> ASAP은 무례하거나 급하게 들립니다.</p>
+          <p><b>대안</b> <span class="good-text">I’ll send it by EOD today.</span></p>
+        </div>
+        <div class="mistake-item">
+          <h3>40) I’m waiting your reply.</h3>
+          <p><b>왜 어색?</b> 문법도 틀렸고(wait for) 압박감이 큽니다.</p>
+          <p><b>대안</b> <span class="good-text">I look forward to your reply.</span></p>
+        </div>
 
-      <p class="note"><strong>팁:</strong> 위 “After” 문장들을 그대로 템플릿으로 외워두면, AI 없이도 기본 톤이 확 좋아져요.</p>
-      <p class="hint">다음 추천: <a href="/email-request.html">요청 템플릿</a> · <a href="/email-followup.html">리마인드</a></p>
-    </div>
+        <div class="mistake-item">
+          <h3>41) Please answer me.</h3>
+          <p><b>왜 어색?</b> 직설적이고 감정적으로 들립니다.</p>
+          <p><b>대안</b> <span class="good-text">Could you get back to me?</span></p>
+        </div>
+        <div class="mistake-item">
+          <h3>42) I will share you the file.</h3>
+          <p><b>왜 어색?</b> share 뒤에 with가 빠졌습니다.</p>
+          <p><b>대안</b> <span class="good-text">I’ll share the file with you.</span></p>
+        </div>
+        <div class="mistake-item">
+          <h3>43) I attached the file. Please refer.</h3>
+          <p><b>왜 어색?</b> refer만 단독으로 쓰면 어색합니다.</p>
+          <p><b>대안</b> <span class="good-text">Please refer to the attached file.</span></p>
+        </div>
+        <div class="mistake-item">
+          <h3>44) I’m sorry for late reply.</h3>
+          <p><b>왜 어색?</b> 관사(the)나 소유격(my)이 필요합니다.</p>
+          <p><b>대안</b> <span class="good-text">Apologies for the delayed response.</span></p>
+        </div>
+        <div class="mistake-item">
+          <h3>45) I’ll revert you soon.</h3>
+          <p><b>왜 어색?</b> 인도식 영어입니다. 일반 비즈니스에선 어색함.</p>
+          <p><b>대안</b> <span class="good-text">I’ll get back to you soon.</span></p>
+        </div>
+        <div class="mistake-item">
+          <h3>46) I’ll do the needful.</h3>
+          <p><b>왜 어색?</b> 지역적 표현(일반 비즈니스 영어에서는 비권장).</p>
+          <p><b>대안</b> <span class="good-text">I’ll take care of it. / I’ll handle it.</span></p>
+        </div>
+        <div class="mistake-item">
+          <h3>47) As per your mail…</h3>
+          <p><b>왜 어색?</b> 딱딱하고 기계적인 뉘앙스가 있습니다.</p>
+          <p><b>대안</b> <span class="good-text">As mentioned in your email…</span></p>
+        </div>
+        <div class="mistake-item">
+          <h3>48) Kindly do this.</h3>
+          <p><b>왜 어색?</b> 문맥에 따라 명령처럼 들릴 수 있습니다.</p>
+          <p><b>대안</b> <span class="good-text">Could you please…?</span></p>
+        </div>
+        <div class="mistake-item">
+          <h3>49) Please do the favor.</h3>
+          <p><b>왜 어색?</b> 관용구(do me a favor)가 어색합니다.</p>
+          <p><b>대안</b> <span class="good-text">Could you do me a favor?</span></p>
+        </div>
+        <div class="mistake-item">
+          <h3>50) I will inform you once done.</h3>
+          <p><b>왜 어색?</b> 나쁘진 않지만 조금 딱딱합니다.</p>
+          <p><b>대안</b> <span class="good-text">I’ll let you know once it’s done.</span></p>
+        </div>
+
+      </div> </div>
 
     <footer>
       © 2026 The Tiny Step |
@@ -124,8 +375,5 @@
       <a href="mailto:chaee1008@gmail.com">Contact</a>
     </footer>
   </div>
-      <meta name="google-adsense-account" content="ca-pub-5634467403173492">
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5634467403173492"
-       crossorigin="anonymous"></script>
 </body>
 </html>
